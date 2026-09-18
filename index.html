@@ -1,1234 +1,1329 @@
-gauthera/
-├── index.html
-├── style.css
-└── script.js
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-    name="description"
-    content="Gauthera : coaching sportif avec Gauthier Deneef à Bruxelles, à domicile, en extérieur et en salle."
-  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Gauthera : coaching sportif avec Gauthier Deneef à Bruxelles, à domicile, en extérieur et en salle."
+    >
 
-  <title>Gauthera | Coach sportif à Bruxelles</title>
+    <title>Gauthera | Coach sportif à Bruxelles</title>
 
-  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link
-    href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap)"
-    rel="stylesheet"
-  >
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    >
 
-<body>
-  <header class="site-header">
-    <div class="container nav-container">
-      <a class="logo" href="#accueil" aria-label="Accueil Gauthera">
-        Gauthera<span>.</span>
-      </a>
+    <style>
+      :root {
+        --green: #173d32;
+        --green-dark: #0d2922;
+        --lime: #d8ff65;
+        --cream: #f5f1e8;
+        --white: #ffffff;
+        --ink: #14201c;
+        --muted: #657069;
+        --line: rgba(20, 32, 28, 0.14);
+        --radius: 24px;
+        --shadow: 0 24px 70px rgba(13, 41, 34, 0.13);
+      }
 
-      <button
-        class="menu-button"
-        type="button"
-        aria-label="Ouvrir le menu"
-        aria-controls="main-nav"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      * {
+        box-sizing: border-box;
+      }
 
-      <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
-        <a href="#histoire">Histoire</a>
-        <a href="#objectifs">Objectifs</a>
-        <a href="#tarifs">Tarifs</a>
-        <a href="#avis">Avis</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
 
-      <a class="header-phone" href="tel:+32484084814">0484 084 814</a>
-    </div>
-  </header>
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--white);
+        font-family: "DM Sans", sans-serif;
+        line-height: 1.65;
+      }
 
-  <main>
-    <section id="accueil" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Coach sportif à Bruxelles</p>
+      body.menu-open {
+        overflow: hidden;
+      }
 
-          <h1>
-            Bienvenue<br>
-            chez <em>Gauthera.</em>
-          </h1>
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
 
-          <p class="hero-lead">
-            La force fonctionnelle pour des résultats durables.
-          </p>
+      h1,
+      h2,
+      h3,
+      .logo {
+        font-family: "Manrope", sans-serif;
+      }
 
-          <div class="button-row">
-            <a class="button button-primary whatsapp-link" href="#">
-              Prendre rendez-vous
-            </a>
-            <a class="button button-secondary" href="#histoire">
-              Découvrir
-            </a>
-          </div>
+      h1 {
+        max-width: 850px;
+        margin-bottom: 24px;
+        font-size: clamp(3.4rem, 9vw, 7.8rem);
+        line-height: 0.93;
+        letter-spacing: -0.075em;
+      }
 
-          <div class="hero-features">
-            <span>Accompagnement en salle aussi</span>
-            <span>Suivi personnalisé inclus</span>
-            <span>BEPS · EREPS Niveau 4</span>
-          </div>
-        </div>
+      h1 em {
+        color: var(--lime);
+        font-weight: 700;
+      }
 
-        <aside class="hero-card">
-          <p class="card-label">Coaching personnalisé</p>
-          <p class="hero-number">7/7</p>
-          <p>À domicile, en extérieur ou en salle, partout à Bruxelles.</p>
-          <a class="text-link whatsapp-link" href="#">Échanger avec Gauthier →</a>
-        </aside>
+      h2 {
+        margin-bottom: 32px;
+        font-size: clamp(2.5rem, 6vw, 5.3rem);
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+      }
+
+      h3 {
+        margin-bottom: 12px;
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--lime);
+        outline-offset: 4px;
+      }
+
+      .container {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 110px 0;
+      }
+
+      .section-soft {
+        background: var(--cream);
+      }
+
+      .section-dark {
+        color: var(--white);
+        background: var(--green-dark);
+      }
+
+      .eyebrow {
+        margin-bottom: 18px;
+        color: #668178;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .section-dark .eyebrow,
+      .hero .eyebrow,
+      .contact-section .eyebrow {
+        color: var(--lime);
+      }
+
+      .large-text {
+        font-size: clamp(1.15rem, 2vw, 1.45rem);
+      }
+
+      .site-header {
+        position: sticky;
+        z-index: 100;
+        top: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--white);
+        background: rgba(13, 41, 34, 0.95);
+        backdrop-filter: blur(14px);
+      }
+
+      .nav-container {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .logo {
+        font-size: 1.35rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: var(--lime);
+      }
+
+      .main-nav {
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .main-nav a,
+      .header-phone {
+        font-size: 0.92rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .main-nav a:hover,
+      .header-phone:hover {
+        color: var(--lime);
+      }
+
+      .header-phone {
+        color: var(--lime);
+      }
+
+      .menu-button {
+        display: none;
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        padding: 10px;
+        border: 0;
+        color: white;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .menu-button span {
+        display: block;
+        height: 2px;
+        margin: 5px 0;
+        background: currentColor;
+      }
+
+      .hero {
+        position: relative;
+        min-height: calc(100vh - 76px);
+        padding: 110px 0 80px;
+        overflow: hidden;
+        color: var(--white);
+        background:
+          radial-gradient(circle at 85% 25%, rgba(216, 255, 101, 0.18), transparent 27%),
+          linear-gradient(135deg, var(--green-dark), var(--green));
+      }
+
+      .hero::after {
+        position: absolute;
+        right: -150px;
+        bottom: -280px;
+        width: 650px;
+        height: 650px;
+        border: 1px solid rgba(216, 255, 101, 0.25);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        align-items: end;
+        gap: 50px;
+        grid-template-columns: minmax(0, 1fr) 320px;
+      }
+
+      .hero-lead {
+        max-width: 600px;
+        margin-bottom: 38px;
+        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 50px;
+        padding: 12px 22px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 160ms ease,
+          background-color 160ms ease,
+          color 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        color: var(--green-dark);
+        background: var(--lime);
+      }
+
+      .button-primary:hover {
+        background: #e4ff94;
+      }
+
+      .button-secondary {
+        border-color: var(--line);
+        color: var(--ink);
+        background: transparent;
+      }
+
+      .hero .button-secondary {
+        border-color: rgba(255, 255, 255, 0.4);
+        color: var(--white);
+      }
+
+      .button-light {
+        color: var(--green-dark);
+        background: var(--white);
+      }
+
+      .button-outline-light {
+        border-color: rgba(255, 255, 255, 0.4);
+        color: var(--white);
+      }
+
+      .hero-features {
+        display: flex;
+        margin-top: 48px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hero-features span {
+        padding: 7px 11px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.78rem;
+      }
+
+      .hero-card {
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      .card-label {
+        margin-bottom: 12px;
+        color: #7c8b84;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero-card .card-label {
+        color: var(--lime);
+      }
+
+      .hero-number {
+        margin-bottom: 4px;
+        color: var(--lime);
+        font-family: "Manrope", sans-serif;
+        font-size: 4.5rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .text-link {
+        display: inline-block;
+        margin-top: 12px;
+        color: var(--lime);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .profile-grid {
+        display: grid;
+        gap: 80px;
+        grid-template-columns: 0.8fr 1.2fr;
+      }
+
+      .profile-card {
+        display: flex;
+        margin: 36px 0 24px;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .avatar {
+        display: grid;
+        width: 78px;
+        height: 78px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        place-items: center;
+        color: var(--green-dark);
+        background: var(--lime);
+        font-family: "Manrope", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 800;
+      }
+
+      .profile-card h3,
+      .profile-card p {
+        margin-bottom: 4px;
+      }
+
+      .language-line {
+        margin-bottom: 28px;
+      }
+
+      .story-list article {
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .story-list article:first-child {
+        padding-top: 0;
+      }
+
+      .story-list p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .section-heading {
+        display: grid;
+        margin-bottom: 50px;
+        align-items: end;
+        gap: 50px;
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 0;
+      }
+
+      .steps-grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .step-card {
+        position: relative;
+        padding: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .step-card .card-label {
+        color: var(--lime);
+      }
+
+      .step-number {
+        display: block;
+        margin-bottom: 35px;
+        color: var(--lime);
+        font-family: "Manrope", sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .price-word {
+        margin: 18px 0 8px;
+        color: var(--lime);
+        font-family: "Manrope", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 800;
+      }
+
+      .medical-note {
+        margin: 28px 0 0;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.86rem;
+      }
+
+      .program-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .program-card {
+        min-height: 225px;
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--white);
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .program-card:hover {
+        border-color: var(--green);
+        box-shadow: var(--shadow);
+        transform: translateY(-5px);
+      }
+
+      .program-card > span {
+        display: block;
+        margin-bottom: 50px;
+        color: #789087;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .program-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .pricing-grid {
+        display: grid;
+        margin-top: 45px;
+        gap: 18px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .price-card {
+        position: relative;
+        padding: 34px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+      }
+
+      .price-card.featured {
+        color: var(--white);
+        background: var(--green);
+        box-shadow: var(--shadow);
+      }
+
+      .badge {
+        display: inline-block;
+        margin-bottom: 22px;
+        padding: 7px 11px;
+        border-radius: 999px;
+        color: var(--green-dark);
+        background: var(--lime);
+        font-size: 0.75rem;
+        font-weight: 800;
+      }
+
+      .price {
+        display: flex;
+        margin: 26px 0;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .price strong {
+        font-family: "Manrope", sans-serif;
+        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        line-height: 1;
+      }
+
+      .price span {
+        color: var(--muted);
+      }
+
+      .featured .price span,
+      .featured .card-label {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .price-card ul {
+        min-height: 155px;
+        margin: 0 0 28px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .price-card li {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 25px;
+      }
+
+      .price-card li::before {
+        position: absolute;
+        left: 0;
+        color: #76a10a;
+        content: "✓";
+        font-weight: 800;
+      }
+
+      .featured li::before {
+        color: var(--lime);
+      }
+
+      .b2b-grid,
+      .contact-grid {
+        display: grid;
+        align-items: start;
+        gap: 80px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-list article {
+        display: flex;
+        padding: 26px 0;
+        border-bottom: 1px solid var(--line);
+        gap: 22px;
+      }
+
+      .process-list article:first-child {
+        padding-top: 0;
+      }
+
+      .process-list span {
+        color: #789087;
+        font-weight: 800;
+      }
+
+      .process-list p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .contact-section {
+        padding: 100px 0;
+        color: var(--white);
+        background: var(--green);
+      }
+
+      .contact-section h2 {
+        margin-bottom: 0;
+      }
+
+      .contact-email {
+        margin: 28px 0 0;
+      }
+
+      .contact-email a {
+        color: var(--lime);
+      }
+
+      .site-footer {
+        padding: 30px 0;
+        color: rgba(255, 255, 255, 0.7);
+        background: var(--green-dark);
+      }
+
+      .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+      }
+
+      .footer-content p {
+        margin: 0;
+        font-size: 0.85rem;
+      }
+
+      .cookie-banner {
+        position: fixed;
+        z-index: 200;
+        right: 20px;
+        bottom: 20px;
+        display: flex;
+        width: min(500px, calc(100% - 40px));
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        align-items: center;
+        gap: 18px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .cookie-banner p {
+        margin: 0;
+        font-size: 0.82rem;
+      }
+
+      .cookie-banner.is-hidden {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .main-nav {
+          position: fixed;
+          top: 76px;
+          right: 0;
+          left: 0;
+          display: none;
+          padding: 30px 20px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          align-items: stretch;
+          flex-direction: column;
+          color: var(--white);
+          background: var(--green-dark);
+        }
+
+        .main-nav.is-open {
+          display: flex;
+        }
+
+        .menu-button {
+          display: block;
+        }
+
+        .header-phone {
+          display: none;
+        }
+
+        .hero-grid,
+        .profile-grid,
+        .section-heading,
+        .b2b-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .hero-card {
+          max-width: 500px;
+        }
+
+        .program-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .profile-grid,
+        .b2b-grid,
+        .contact-grid {
+          gap: 50px;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .container {
+          width: min(100% - 28px, 1160px);
+        }
+
+        .section {
+          padding: 80px 0;
+        }
+
+        h1 {
+          font-size: clamp(3rem, 17vw, 5rem);
+        }
+
+        h2 {
+          font-size: clamp(2.4rem, 13vw, 4rem);
+        }
+
+        .hero {
+          padding: 80px 0 60px;
+        }
+
+        .steps-grid,
+        .program-grid,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .program-card {
+          min-height: 190px;
+        }
+
+        .price-card {
+          padding: 26px;
+        }
+
+        .price-card ul {
+          min-height: 0;
+        }
+
+        .footer-content,
+        .cookie-banner {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .footer-content {
+          text-align: center;
+        }
+
+        .cookie-banner .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container nav-container">
+        <a class="logo" href="#accueil" aria-label="Accueil Gauthera">
+          Gauthera<span>.</span>
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+          <a href="#histoire">Histoire</a>
+          <a href="#objectifs">Objectifs</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#avis">Avis</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="header-phone" href="tel:+32484084814">0484 084 814</a>
       </div>
-    </section>
+    </header>
 
-    <section id="histoire" class="section">
-      <div class="container">
-        <p class="eyebrow">Qui suis-je ?</p>
+    <main>
+      <section id="accueil" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Coach sportif à Bruxelles</p>
 
-        <div class="profile-grid">
-          <div>
-            <h2>Gauthier<br>Deneef.</h2>
+            <h1>
+              Bienvenue<br>
+              chez <em>Gauthera.</em>
+            </h1>
 
-            <div class="profile-card">
-              <div class="avatar" aria-hidden="true">GD</div>
-              <div>
-                <h3>Gauthier Deneef</h3>
-                <p>Coach sportif · Bruxelles</p>
-                <p><strong>BEPS · EREPS N4</strong></p>
-              </div>
-            </div>
-
-            <p class="language-line">
-              <strong>Langues :</strong> Français · English · Nederlands
+            <p class="hero-lead">
+              La force fonctionnelle pour des résultats durables.
             </p>
 
             <div class="button-row">
-              <a class="button button-primary" href="tel:+32484084814">
-                0484 084 814
-              </a>
               <a
-                class="button button-secondary"
-                href="[instagram.com](https://www.instagram.com/Gauth_trainer/)"
+                class="button button-primary whatsapp-link"
+                href="https://wa.me/32484084814?text=Bonjour%20Gauthier%2C%20je%20souhaite%20prendre%20rendez-vous."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                @Gauth_trainer
+                Prendre rendez-vous
+              </a>
+              <a class="button button-secondary" href="#histoire">
+                Découvrir
+              </a>
+            </div>
+
+            <div class="hero-features">
+              <span>Accompagnement en salle aussi</span>
+              <span>Suivi personnalisé inclus</span>
+              <span>BEPS · EREPS Niveau 4</span>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <p class="card-label">Coaching personnalisé</p>
+            <p class="hero-number">7/7</p>
+            <p>À domicile, en extérieur ou en salle, partout à Bruxelles.</p>
+            <a
+              class="text-link whatsapp-link"
+              href="https://wa.me/32484084814?text=Bonjour%20Gauthier%2C%20je%20souhaite%20prendre%20rendez-vous."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Échanger avec Gauthier →
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="histoire" class="section">
+        <div class="container">
+          <p class="eyebrow">Qui suis-je ?</p>
+
+          <div class="profile-grid">
+            <div>
+              <h2>Gauthier<br>Deneef.</h2>
+
+              <div class="profile-card">
+                <div class="avatar" aria-hidden="true">GD</div>
+                <div>
+                  <h3>Gauthier Deneef</h3>
+                  <p>Coach sportif · Bruxelles</p>
+                  <p><strong>BEPS · EREPS N4</strong></p>
+                </div>
+              </div>
+
+              <p class="language-line">
+                <strong>Langues :</strong> Français · English · Nederlands
+              </p>
+
+              <div class="button-row">
+                <a class="button button-primary" href="tel:+32484084814">
+                  0484 084 814
+                </a>
+                <a
+                  class="button button-secondary"
+                  href="https://www.instagram.com/Gauth_trainer/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @Gauth_trainer
+                </a>
+              </div>
+            </div>
+
+            <div class="story-list">
+              <article>
+                <h3>Personnalité</h3>
+                <p>
+                  Motivé, à l'écoute et direct, Gauthier transmet une énergie
+                  qui pousse à avancer sans mettre la pression. Sa priorité est
+                  de comprendre la personne avant de construire le programme.
+                </p>
+              </article>
+
+              <article>
+                <h3>Parcours sportif</h3>
+                <p>
+                  Rugby, calisthenics et fitness ont façonné sa vision du
+                  mouvement. Son expérience personnelle ancre aujourd'hui sa
+                  méthode dans le concret.
+                </p>
+              </article>
+
+              <article>
+                <h3>Parcours professionnel</h3>
+                <p>
+                  Après avoir travaillé comme coach salarié dans toute la
+                  Belgique, Gauthier s'est lancé comme indépendant. Des centaines
+                  de profils accompagnés constituent le socle de son approche.
+                </p>
+              </article>
+
+              <article>
+                <h3>Formations et certifications</h3>
+                <p>
+                  Enregistré EREPS Niveau 4 et certifié BEPS en premiers secours,
+                  avec une formation complétée sur le terrain auprès de coachs
+                  expérimentés.
+                </p>
+              </article>
+
+              <article>
+                <h3>Vision</h3>
+                <p>
+                  Le physique progresse durablement lorsque le mental suit.
+                  Cette double approche guide chaque accompagnement.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Comment commencer</p>
+              <h2>Deux étapes simples.</h2>
+            </div>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-number">01</span>
+              <p class="card-label">Sans engagement</p>
+              <h3>Premier échange</h3>
+              <p class="price-word">Gratuit</p>
+              <p>WhatsApp ou appel · 0484 084 814</p>
+              <p>
+                Un échange sans pression pour parler des objectifs, du contexte
+                et de ce qui freine.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <span class="step-number">02</span>
+              <p class="card-label">Bilan complet</p>
+              <h3>Séance d'essai et bilan</h3>
+              <p class="price-word">30€</p>
+              <p>1 heure · 1 personne · Bilan postural inclus</p>
+              <p>
+                Anamnèse, objectifs et bilan postural statique et dynamique pour
+                partir de données réelles.
+              </p>
+              <a
+                class="text-link whatsapp-link"
+                href="https://wa.me/32484084814?text=Bonjour%20Gauthier%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance%20d%27essai."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Réserver →
+              </a>
+            </article>
+          </div>
+
+          <p class="medical-note">
+            En cas de pathologie, blessure ou traitement en cours, un avis
+            médical préalable est recommandé.
+          </p>
+        </div>
+      </section>
+
+      <section id="objectifs" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Programmes</p>
+              <h2>Un objectif.<br>Une méthode adaptée.</h2>
+            </div>
+            <p>
+              Les séances sont disponibles en extérieur, à domicile et en salle,
+              selon la saison, le contexte et vos objectifs.
+            </p>
+          </div>
+
+          <div class="program-grid">
+            <article class="program-card">
+              <span>01</span>
+              <h3>Remise en forme</h3>
+              <p>Progression mesurable, semaine après semaine.</p>
+            </article>
+
+            <article class="program-card">
+              <span>02</span>
+              <h3>Calisthenics</h3>
+              <p>Le poids du corps, avec peu ou pas d'équipement.</p>
+            </article>
+
+            <article class="program-card">
+              <span>03</span>
+              <h3>Perte de poids</h3>
+              <p>Un protocole suivi de près, sans raccourcis.</p>
+            </article>
+
+            <article class="program-card">
+              <span>04</span>
+              <h3>Prise de masse</h3>
+              <p>Structure, alimentation et progression.</p>
+            </article>
+
+            <article class="program-card">
+              <span>05</span>
+              <h3>Préparation physique</h3>
+              <p>Un corps prêt pour l'exigence sportive.</p>
+            </article>
+
+            <article class="program-card">
+              <span>06</span>
+              <h3>Gestion du stress</h3>
+              <p>Un accompagnement sur mesure pour reprendre le contrôle.</p>
+            </article>
+
+            <article class="program-card">
+              <span>07</span>
+              <h3>Cardio et VO2Max</h3>
+              <p>L'endurance développée progressivement.</p>
+            </article>
+
+            <article class="program-card">
+              <span>08</span>
+              <h3>Coordination</h3>
+              <p>Plus de précision et de maîtrise à chaque geste.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="tarifs" class="section section-soft">
+        <div class="container">
+          <p class="eyebrow">Tarifs</p>
+          <h2>Des formules<br>claires.</h2>
+
+          <div class="pricing-grid">
+            <article class="price-card">
+              <p class="card-label">Solo · À l'unité</p>
+              <h3>Une séance</h3>
+              <p class="price"><strong>55€</strong><span>/ séance</span></p>
+              <ul>
+                <li>Séance 100% personnalisée</li>
+                <li>Programme sur mesure</li>
+                <li>Outdoor ou à domicile</li>
+                <li>Support entre les séances</li>
+              </ul>
+              <a
+                class="button button-primary whatsapp-link"
+                href="https://wa.me/32484084814?text=Bonjour%20Gauthier%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance%20solo."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Réserver
+              </a>
+            </article>
+
+            <article class="price-card featured">
+              <p class="badge">Meilleur rapport qualité / prix</p>
+              <p class="card-label">Solo Pack · 10 séances</p>
+              <h3>Pack Solo</h3>
+              <p class="price"><strong>450€</strong><span>45€ / séance</span></p>
+              <ul>
+                <li>10 séances personnalisées</li>
+                <li>Programme sur mesure dès le début</li>
+                <li>Outdoor ou à domicile</li>
+                <li>Support WhatsApp</li>
+                <li>Rapport de progression final</li>
+              </ul>
+              <a
+                class="button button-primary whatsapp-link"
+                href="https://wa.me/32484084814?text=Bonjour%20Gauthier%2C%20je%20souhaite%20prendre%20le%20pack%20solo."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Je commence
+              </a>
+            </article>
+
+            <article class="price-card">
+              <p class="card-label">Duo · À l'unité</p>
+              <h3>Une séance à deux</h3>
+              <p class="price"><strong>85€</strong><span>/ séance</span></p>
+              <ul>
+                <li>Programme adapté pour deux</li>
+                <li>Objectifs identiques ou complémentaires</li>
+                <li>Outdoor ou à domicile</li>
+                <li>Suivi individuel même en duo</li>
+              </ul>
+              <a
+                class="button button-primary whatsapp-link"
+                href="https://wa.me/32484084814?text=Bonjour%20Gauthier%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance%20%C3%A0%20deux."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Réserver
+              </a>
+            </article>
+
+            <article class="price-card">
+              <p class="card-label">Duo Pack · 10 séances</p>
+              <h3>Pack Duo</h3>
+              <p class="price"><strong>700€</strong><span>70€ / séance</span></p>
+              <ul>
+                <li>10 séances pour deux personnes</li>
+                <li>Programme sur mesure à deux</li>
+                <li>Outdoor ou à domicile</li>
+                <li>Support WhatsApp</li>
+                <li>Rapport de progression final</li>
+              </ul>
+              <a
+                class="button button-primary whatsapp-link"
+                href="https://wa.me/32484084814?text=Bonjour%20Gauthier%2C%20je%20souhaite%20prendre%20le%20pack%20duo."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Je commence
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="avis" class="section">
+        <div class="container b2b-grid">
+          <div>
+            <p class="eyebrow">Entreprises B2B</p>
+            <h2>Votre équipe.<br>Sa santé.</h2>
+            <p class="large-text">
+              Programmes bien-être en entreprise, team building, ateliers
+              collectifs et gestion du stress pour les équipes bruxelloises.
+            </p>
+
+            <div class="button-row">
+              <a
+                class="button button-primary"
+                href="mailto:gauthier.deneef@hotmail.com?subject=Devis%20entreprise%20Gauthera"
+              >
+                Demander un devis
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://g.page/r/CeHOS4-zc6i1EAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Voir les avis Google
               </a>
             </div>
           </div>
 
-          <div class="story-list">
+          <div class="process-list">
             <article>
-              <h3>Personnalité</h3>
-              <p>
-                Motivé, à l'écoute et direct, Gauthier transmet une énergie
-                qui pousse à avancer sans mettre la pression. Sa priorité est
-                de comprendre la personne avant de construire le programme.
-              </p>
+              <span>01</span>
+              <div>
+                <h3>Contact</h3>
+                <p>Un message avec les besoins et le contexte de l'équipe.</p>
+              </div>
             </article>
 
             <article>
-              <h3>Parcours sportif</h3>
-              <p>
-                Rugby, calisthenics et fitness ont façonné sa vision du
-                mouvement. Son expérience personnelle ancre aujourd'hui sa
-                méthode dans le concret.
-              </p>
+              <span>02</span>
+              <div>
+                <h3>Analyse</h3>
+                <p>
+                  Une proposition adaptée à l'équipe, au budget et aux
+                  disponibilités.
+                </p>
+              </div>
             </article>
 
             <article>
-              <h3>Parcours professionnel</h3>
-              <p>
-                Après avoir travaillé comme coach salarié dans toute la
-                Belgique, Gauthier s'est lancé comme indépendant. Des centaines
-                de profils accompagnés constituent le socle de son approche.
-              </p>
-            </article>
-
-            <article>
-              <h3>Formations et certifications</h3>
-              <p>
-                Enregistré EREPS Niveau 4 et certifié BEPS en premiers secours,
-                avec une formation complétée sur le terrain auprès de coachs
-                expérimentés.
-              </p>
-            </article>
-
-            <article>
-              <h3>Vision</h3>
-              <p>
-                Le physique progresse durablement lorsque le mental suit.
-                Cette double approche guide chaque accompagnement.
-              </p>
+              <span>03</span>
+              <div>
+                <h3>Démarrage</h3>
+                <p>En extérieur ou directement sur le lieu de travail.</p>
+              </div>
             </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section section-dark">
-      <div class="container">
-        <div class="section-heading">
+      <section id="contact" class="contact-section">
+        <div class="container contact-grid">
           <div>
-            <p class="eyebrow">Comment commencer</p>
-            <h2>Deux étapes simples.</h2>
+            <p class="eyebrow">Contact</p>
+            <h2>Je contacte<br>Gauthera.</h2>
           </div>
-        </div>
 
-        <div class="steps-grid">
-          <article class="step-card">
-            <span class="step-number">01</span>
-            <p class="card-label">Sans engagement</p>
-            <h3>Premier échange</h3>
-            <p class="price-word">Gratuit</p>
-            <p>WhatsApp ou appel · 0484 084 814</p>
-            <p>
-              Un échange sans pression pour parler des objectifs, du contexte
-              et de ce qui freine.
-            </p>
-          </article>
-
-          <article class="step-card">
-            <span class="step-number">02</span>
-            <p class="card-label">Bilan complet</p>
-            <h3>Séance d'essai et bilan</h3>
-            <p class="price-word">30€</p>
-            <p>1 heure · 1 personne · Bilan postural inclus</p>
-            <p>
-              Anamnèse, objectifs et bilan postural statique et dynamique pour
-              partir de données réelles.
-            </p>
-            <a class="text-link whatsapp-link" href="#">Réserver →</a>
-          </article>
-        </div>
-
-        <p class="medical-note">
-          En cas de pathologie, blessure ou traitement en cours, un avis
-          médical préalable est recommandé.
-        </p>
-      </div>
-    </section>
-
-    <section id="objectifs" class="section">
-      <div class="container">
-        <div class="section-heading">
           <div>
-            <p class="eyebrow">Programmes</p>
-            <h2>Un objectif.<br>Une méthode adaptée.</h2>
-          </div>
-          <p>
-            Les séances sont disponibles en extérieur, à domicile et en salle,
-            selon la saison, le contexte et vos objectifs.
-          </p>
-        </div>
+            <p class="large-text">
+              La meilleure façon de commencer, c'est de poser la première
+              question. Réponse sous 24h.
+            </p>
 
-        <div class="program-grid">
-          <article class="program-card">
-            <span>01</span>
-            <h3>Remise en forme</h3>
-            <p>Progression mesurable, semaine après semaine.</p>
-          </article>
+            <div class="button-row">
+              <a
+                class="button button-light whatsapp-link"
+                href="https://wa.me/32484084814?text=Bonjour%20Gauthier%2C%20je%20souhaite%20prendre%20contact."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp · 0484 084 814
+              </a>
+              <a
+                class="button button-outline-light"
+                href="https://g.page/r/CeHOS4-zc6i1EAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Avis Google
+              </a>
+            </div>
 
-          <article class="program-card">
-            <span>02</span>
-            <h3>Calisthenics</h3>
-            <p>Le poids du corps, avec peu ou pas d'équipement.</p>
-          </article>
-
-          <article class="program-card">
-            <span>03</span>
-            <h3>Perte de poids</h3>
-            <p>Un protocole suivi de près, sans raccourcis.</p>
-          </article>
-
-          <article class="program-card">
-            <span>04</span>
-            <h3>Prise de masse</h3>
-            <p>Structure, alimentation et progression.</p>
-          </article>
-
-          <article class="program-card">
-            <span>05</span>
-            <h3>Préparation physique</h3>
-            <p>Un corps prêt pour l'exigence sportive.</p>
-          </article>
-
-          <article class="program-card">
-            <span>06</span>
-            <h3>Gestion du stress</h3>
-            <p>Un accompagnement sur mesure pour reprendre le contrôle.</p>
-          </article>
-
-          <article class="program-card">
-            <span>07</span>
-            <h3>Cardio et VO2Max</h3>
-            <p>L'endurance développée progressivement.</p>
-          </article>
-
-          <article class="program-card">
-            <span>08</span>
-            <h3>Coordination</h3>
-            <p>Plus de précision et de maîtrise à chaque geste.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="tarifs" class="section section-soft">
-      <div class="container">
-        <p class="eyebrow">Tarifs</p>
-        <h2>Des formules<br>claires.</h2>
-
-        <div class="pricing-grid">
-          <article class="price-card">
-            <p class="card-label">Solo · À l'unité</p>
-            <h3>Une séance</h3>
-            <p class="price"><strong>55€</strong><span>/ séance</span></p>
-            <ul>
-              <li>Séance 100% personnalisée</li>
-              <li>Programme sur mesure</li>
-              <li>Outdoor ou à domicile</li>
-              <li>Support entre les séances</li>
-            </ul>
-            <a class="button button-primary whatsapp-link" href="#">
-              Réserver
-            </a>
-          </article>
-
-          <article class="price-card featured">
-            <p class="badge">Meilleur rapport qualité / prix</p>
-            <p class="card-label">Solo Pack · 10 séances</p>
-            <h3>Pack Solo</h3>
-            <p class="price"><strong>450€</strong><span>45€ / séance</span></p>
-            <ul>
-              <li>10 séances personnalisées</li>
-              <li>Programme sur mesure dès le début</li>
-              <li>Outdoor ou à domicile</li>
-              <li>Support WhatsApp</li>
-              <li>Rapport de progression final</li>
-            </ul>
-            <a class="button button-primary whatsapp-link" href="#">
-              Je commence
-            </a>
-          </article>
-
-          <article class="price-card">
-            <p class="card-label">Duo · À l'unité</p>
-            <h3>Une séance à deux</h3>
-            <p class="price"><strong>85€</strong><span>/ séance</span></p>
-            <ul>
-              <li>Programme adapté pour deux</li>
-              <li>Objectifs identiques ou complémentaires</li>
-              <li>Outdoor ou à domicile</li>
-              <li>Suivi individuel même en duo</li>
-            </ul>
-            <a class="button button-primary whatsapp-link" href="#">
-              Réserver
-            </a>
-          </article>
-
-          <article class="price-card">
-            <p class="card-label">Duo Pack · 10 séances</p>
-            <h3>Pack Duo</h3>
-            <p class="price"><strong>700€</strong><span>70€ / séance</span></p>
-            <ul>
-              <li>10 séances pour deux personnes</li>
-              <li>Programme sur mesure à deux</li>
-              <li>Outdoor ou à domicile</li>
-              <li>Support WhatsApp</li>
-              <li>Rapport de progression final</li>
-            </ul>
-            <a class="button button-primary whatsapp-link" href="#">
-              Je commence
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="avis" class="section">
-      <div class="container b2b-grid">
-        <div>
-          <p class="eyebrow">Entreprises B2B</p>
-          <h2>Votre équipe.<br>Sa santé.</h2>
-          <p class="large-text">
-            Programmes bien-être en entreprise, team building, ateliers
-            collectifs et gestion du stress pour les équipes bruxelloises.
-          </p>
-
-          <div class="button-row">
-            <a
-              class="button button-primary"
-              href="mailto:gauthier.deneef@hotmail.com?subject=Devis%20entreprise%20Gauthera"
-            >
-              Demander un devis
-            </a>
-            <a
-              class="button button-secondary"
-              href="[g.page](https://g.page/r/CeHOS4-zc6i1EAE/review)"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Voir les avis Google
-            </a>
+            <p class="contact-email">
+              <a href="mailto:gauthier.deneef@hotmail.com">
+                gauthier.deneef@hotmail.com
+              </a>
+            </p>
           </div>
         </div>
+      </section>
+    </main>
 
-        <div class="process-list">
-          <article>
-            <span>01</span>
-            <div>
-              <h3>Contact</h3>
-              <p>Un message avec les besoins et le contexte de l'équipe.</p>
-            </div>
-          </article>
-
-          <article>
-            <span>02</span>
-            <div>
-              <h3>Analyse</h3>
-              <p>
-                Une proposition adaptée à l'équipe, au budget et aux
-                disponibilités.
-              </p>
-            </div>
-          </article>
-
-          <article>
-            <span>03</span>
-            <div>
-              <h3>Démarrage</h3>
-              <p>En extérieur ou directement sur le lieu de travail.</p>
-            </div>
-          </article>
-        </div>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a class="logo" href="#accueil">Gauthera<span>.</span></a>
+        <p>Coach sportif · Bruxelles</p>
+        <p>© <span id="current-year"></span> Gauthera</p>
       </div>
-    </section>
+    </footer>
 
-    <section id="contact" class="contact-section">
-      <div class="container contact-grid">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Je contacte<br>Gauthera.</h2>
-        </div>
-
-        <div>
-          <p class="large-text">
-            La meilleure façon de commencer, c'est de poser la première
-            question. Réponse sous 24h.
-          </p>
-
-          <div class="button-row">
-            <a class="button button-light whatsapp-link" href="#">
-              WhatsApp · 0484 084 814
-            </a>
-            <a
-              class="button button-outline-light"
-              href="[g.page](https://g.page/r/CeHOS4-zc6i1EAE/review)"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Avis Google
-            </a>
-          </div>
-
-          <p class="contact-email">
-            <a href="mailto:gauthier.deneef@hotmail.com">
-              gauthier.deneef@hotmail.com
-            </a>
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <a class="logo" href="#accueil">Gauthera<span>.</span></a>
-      <p>Coach sportif · Bruxelles</p>
-      <p>© <span id="current-year"></span> Gauthera</p>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookies">
+      <p>
+        Ce site utilise des cookies techniques nécessaires à son fonctionnement.
+        Certains liens redirigent vers des services tiers comme Google, Instagram
+        et WhatsApp.
+      </p>
+      <button id="accept-cookies" class="button button-primary" type="button">
+        Accepter
+      </button>
     </div>
-  </footer>
 
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookies">
-    <p>
-      Ce site utilise des cookies techniques et des services tiers essentiels,
-      notamment Google Fonts, WhatsApp et Avis Google.
-    </p>
-    <button id="accept-cookies" class="button button-primary" type="button">
-      Accepter
-      :root {
-  --green: #173d32;
-  --green-dark: #0d2922;
-  --lime: #d8ff65;
-  --cream: #f5f1e8;
-  --white: #ffffff;
-  --ink: #14201c;
-  --muted: #657069;
-  --line: rgba(20, 32, 28, 0.14);
-  --radius: 24px;
-  --shadow: 0 24px 70px rgba(13, 41, 34, 0.13);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  margin: 0;
-  color: var(--ink);
-  background: var(--white);
-  font-family: "DM Sans", sans-serif;
-  line-height: 1.65;
-}
-
-body.menu-open {
-  overflow: hidden;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
-
-h1,
-h2,
-h3,
-.logo {
-  font-family: "Manrope", sans-serif;
-}
-
-h1 {
-  max-width: 850px;
-  margin-bottom: 24px;
-  font-size: clamp(3.4rem, 9vw, 7.8rem);
-  line-height: 0.93;
-  letter-spacing: -0.075em;
-}
-
-h1 em {
-  color: var(--lime);
-  font-weight: 700;
-}
-
-h2 {
-  margin-bottom: 32px;
-  font-size: clamp(2.5rem, 6vw, 5.3rem);
-  line-height: 0.98;
-  letter-spacing: -0.06em;
-}
-
-h3 {
-  margin-bottom: 12px;
-  font-size: 1.25rem;
-  line-height: 1.2;
-}
-
-a {
-  color: inherit;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.container {
-  width: min(1160px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
-.section {
-  padding: 110px 0;
-}
-
-.section-soft {
-  background: var(--cream);
-}
-
-.section-dark {
-  color: var(--white);
-  background: var(--green-dark);
-}
-
-.eyebrow {
-  margin-bottom: 18px;
-  color: #668178;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.section-dark .eyebrow,
-.hero .eyebrow,
-.contact-section .eyebrow {
-  color: var(--lime);
-}
-
-.large-text {
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
-}
-
-.site-header {
-  position: sticky;
-  z-index: 100;
-  top: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  background: rgba(13, 41, 34, 0.95);
-  backdrop-filter: blur(14px);
-}
-
-.nav-container {
-  display: flex;
-  min-height: 76px;
-  align-items: center;
-  gap: 30px;
-}
-
-.logo {
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  text-decoration: none;
-}
-
-.logo span {
-  color: var(--lime);
-}
-
-.main-nav {
-  display: flex;
-  margin-left: auto;
-  align-items: center;
-  gap: 28px;
-}
-
-.main-nav a,
-.header-phone {
-  font-size: 0.92rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.main-nav a:hover,
-.header-phone:hover {
-  color: var(--lime);
-}
-
-.header-phone {
-  color: var(--lime);
-}
-
-.menu-button {
-  display: none;
-  width: 44px;
-  height: 44px;
-  margin-left: auto;
-  padding: 10px;
-  border: 0;
-  color: white;
-  background: transparent;
-  cursor: pointer;
-}
-
-.menu-button span {
-  display: block;
-  height: 2px;
-  margin: 5px 0;
-  background: currentColor;
-}
-
-.hero {
-  position: relative;
-  min-height: calc(100vh - 76px);
-  padding: 110px 0 80px;
-  overflow: hidden;
-  color: var(--white);
-  background:
-    radial-gradient(circle at 85% 25%, rgba(216, 255, 101, 0.18), transparent 27%),
-    linear-gradient(135deg, var(--green-dark), var(--green));
-}
-
-.hero::after {
-  position: absolute;
-  right: -150px;
-  bottom: -280px;
-  width: 650px;
-  height: 650px;
-  border: 1px solid rgba(216, 255, 101, 0.25);
-  border-radius: 50%;
-  content: "";
-}
-
-.hero-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  align-items: end;
-  gap: 50px;
-  grid-template-columns: minmax(0, 1fr) 320px;
-}
-
-.hero-lead {
-  max-width: 600px;
-  margin-bottom: 38px;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-}
-
-.button-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-}
-
-.button {
-  display: inline-flex;
-  min-height: 50px;
-  padding: 12px 22px;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  align-items: center;
-  justify-content: center;
-  font-family: inherit;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    transform 160ms ease,
-    background-color 160ms ease,
-    color 160ms ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button-primary {
-  color: var(--green-dark);
-  background: var(--lime);
-}
-
-.button-primary:hover {
-  background: #e4ff94;
-}
-
-.button-secondary {
-  border-color: var(--line);
-  color: var(--ink);
-  background: transparent;
-}
-
-.hero .button-secondary {
-  border-color: rgba(255, 255, 255, 0.4);
-  color: var(--white);
-}
-
-.button-light {
-  color: var(--green-dark);
-  background: var(--white);
-}
-
-.button-outline-light {
-  border-color: rgba(255, 255, 255, 0.4);
-  color: var(--white);
-}
-
-.hero-features {
-  display: flex;
-  margin-top: 48px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.hero-features span {
-  padding: 7px 11px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.78rem;
-}
-
-.hero-card {
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-}
-
-.card-label {
-  margin-bottom: 12px;
-  color: #7c8b84;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.hero-card .card-label {
-  color: var(--lime);
-}
-
-.hero-number {
-  margin-bottom: 4px;
-  color: var(--lime);
-  font-family: "Manrope", sans-serif;
-  font-size: 4.5rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.text-link {
-  display: inline-block;
-  margin-top: 12px;
-  color: var(--lime);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.profile-grid {
-  display: grid;
-  gap: 80px;
-  grid-template-columns: 0.8fr 1.2fr;
-}
-
-.profile-card {
-  display: flex;
-  margin: 36px 0 24px;
-  align-items: center;
-  gap: 18px;
-}
-
-.avatar {
-  display: grid;
-  width: 78px;
-  height: 78px;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  place-items: center;
-  color: var(--green-dark);
-  background: var(--lime);
-  font-family: "Manrope", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-}
-
-.profile-card h3,
-.profile-card p {
-  margin-bottom: 4px;
-}
-
-.language-line {
-  margin-bottom: 28px;
-}
-
-.story-list article {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.story-list article:first-child {
-  padding-top: 0;
-}
-
-.story-list p {
-  margin-bottom: 0;
-  color: var(--muted);
-}
-
-.section-heading {
-  display: grid;
-  margin-bottom: 50px;
-  align-items: end;
-  gap: 50px;
-  grid-template-columns: 1.2fr 0.8fr;
-}
-
-.section-heading h2 {
-  margin-bottom: 0;
-}
-
-.steps-grid {
-  display: grid;
-  gap: 22px;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.step-card {
-  position: relative;
-  padding: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.step-card .card-label {
-  color: var(--lime);
-}
-
-.step-number {
-  display: block;
-  margin-bottom: 35px;
-  color: var(--lime);
-  font-family: "Manrope", sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-.price-word {
-  margin: 18px 0 8px;
-  color: var(--lime);
-  font-family: "Manrope", sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
-}
-
-.medical-note {
-  margin: 28px 0 0;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.86rem;
-}
-
-.program-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.program-card {
-  min-height: 225px;
-  padding: 26px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--white);
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.program-card:hover {
-  border-color: var(--green);
-  box-shadow: var(--shadow);
-  transform: translateY(-5px);
-}
-
-.program-card > span {
-  display: block;
-  margin-bottom: 50px;
-  color: #789087;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.program-card p {
-  margin-bottom: 0;
-  color: var(--muted);
-}
-
-.pricing-grid {
-  display: grid;
-  margin-top: 45px;
-  gap: 18px;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.price-card {
-  position: relative;
-  padding: 34px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--white);
-}
-
-.price-card.featured {
-  color: var(--white);
-  background: var(--green);
-  box-shadow: var(--shadow);
-}
-
-.badge {
-  display: inline-block;
-  margin-bottom: 22px;
-  padding: 7px 11px;
-  border-radius: 999px;
-  color: var(--green-dark);
-  background: var(--lime);
-  font-size: 0.75rem;
-  font-weight: 800;
-}
-
-.price {
-  display: flex;
-  margin: 26px 0;
-  align-items: baseline;
-  gap: 10px;
-}
-
-.price strong {
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
-  line-height: 1;
-}
-
-.price span {
-  color: var(--muted);
-}
-
-.featured .price span,
-.featured .card-label {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.price-card ul {
-  min-height: 155px;
-  margin: 0 0 28px;
-  padding: 0;
-  list-style: none;
-}
-
-.price-card li {
-  position: relative;
-  margin-bottom: 10px;
-  padding-left: 25px;
-}
-
-.price-card li::before {
-  position: absolute;
-  left: 0;
-  color: #76a10a;
-  content: "✓";
-  font-weight: 800;
-}
-
-.featured li::before {
-  color: var(--lime);
-}
-
-.b2b-grid,
-.contact-grid {
-  display: grid;
-  align-items: start;
-  gap: 80px;
-  grid-template-columns: 1fr 1fr;
-}
-
-.process-list article {
-  display: flex;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--line);
-  gap: 22px;
-}
-
-.process-list article:first-child {
-  padding-top: 0;
-}
-
-.process-list span {
-  color: #789087;
-  font-weight: 800;
-}
-
-.process-list p {
-  margin-bottom: 0;
-  color: var(--muted);
-}
-
-.contact-section {
-  padding: 100px 0;
-  color: var(--white);
-  background: var(--green);
-}
-
-.contact-section h2 {
-  margin-bottom: 0;
-}
-
-.contact-email {
-  margin: 28px 0 0;
-}
-
-.contact-email a {
-  color: var(--lime);
-}
-
-.site-footer {
-  padding: 30px 0;
-  color: rgba(255, 255, 255, 0.7);
-  background: var(--green-dark);
-}
-
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-.footer-content p {
-  margin: 0;
-  font-size: 0.85rem;
-}
-
-.cookie-banner {
-  position: fixed;
-  z-index: 200;
-  right: 20px;
-  bottom: 20px;
-  display: flex;
-  width: min(500px, calc(100% - 40px));
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  align-items: center;
-  gap: 18px;
-  background: var(--white);
-  box-shadow: var(--shadow);
-}
-
-.cookie-banner p {
-  margin: 0;
-  font-size: 0.82rem;
-}
-
-.cookie-banner.is-hidden {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .main-nav {
-    position: fixed;
-    top: 76px;
-    right: 0;
-    left: 0;
-    display: none;
-    padding: 30px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    align-items: stretch;
-    flex-direction: column;
-    color: var(--white);
-    background: var(--green-dark);
-  }
-
-  .main-nav.is-open {
-    display: flex;
-  }
-
-  .menu-button {
-    display: block;
-  }
-
-  .header-phone {
-    display: none;
-  }
-
-  .hero-grid,
-  .profile-grid,
-  .section-heading,
-  .b2b-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-card {
-    max-width: 500px;
-  }
-
-  .program-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .profile-grid,
-  .b2b-grid,
-  .contact-grid {
-    gap: 50px;
-  }
-}
-
-@media (max-width: 650px) {
-  .container {
-    width: min(100% - 28px, 1160px);
-  }
-
-  .section {
-    padding: 80px 0;
-  }
-
-  h1 {
-    font-size: clamp(3rem, 17vw, 5rem);
-  }
-
-  h2 {
-    font-size: clamp(2.4rem, 13vw, 4rem);
-  }
-
-  .hero {
-    padding: 80px 0 60px;
-  }
-
-  .steps-grid,
-  .program-grid,
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .program-card {
-    min-height: 190px;
-  }
-
-  .price-card {
-    padding: 26px;
-  }
-
-  .price-card ul {
-    min-height: 0;
-  }
-
-  .footer-content,
-  .cookie-banner {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .footer-content {
-    text-align: center;
-  }
-
-  .cookie-banner .button {
-    width: 100%;
-  }
-}
-
-    </button>
-  </div>
-</body>
-</html
+    <script>
+      const menuButton = document.querySelector(".menu-button");
+      const mainNav = document.querySelector(".main-nav");
+
+      if (menuButton && mainNav) {
+        menuButton.addEventListener("click", () => {
+          const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+          const nextState = !isOpen;
+
+          menuButton.setAttribute("aria-expanded", String(nextState));
+          menuButton.setAttribute(
+            "aria-label",
+            nextState ? "Fermer le menu" : "Ouvrir le menu"
+          );
+
+          mainNav.classList.toggle("is-open", nextState);
+          document.body.classList.toggle("menu-open", nextState);
+        });
+
+        mainNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Ouvrir le menu");
+            mainNav.classList.remove("is-open");
+            document.body.classList.remove("menu-open");
+          });
+        });
+      }
+
+      const cookieBanner = document.querySelector("#cookie-banner");
+      const acceptCookies = document.querySelector("#accept-cookies");
+
+      if (cookieBanner && acceptCookies) {
+        if (localStorage.getItem("cookiesAccepted") === "true") {
+          cookieBanner.classList.add("is-hidden");
+        }
+
+        acceptCookies.addEventListener("click", () => {
+          localStorage.setItem("cookiesAccepted", "true");
+          cookieBanner.classList.add("is-hidden");
+        });
+      }
+
+      const currentYear = document.querySelector("#current-year");
+      if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>
